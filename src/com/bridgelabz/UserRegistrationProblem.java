@@ -3,8 +3,9 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC8 - Rule4 – Has exactly
-//1 Special Character
+//UC9 - Should clear all
+//email samples
+//provided separately
 
 // ^  ==> starts with or The beginning of a line
 // $  ==> ends with or end of a line
