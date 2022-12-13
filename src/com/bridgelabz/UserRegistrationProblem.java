@@ -3,10 +3,8 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC7 - Rule3 – Should
-//have at least 1
-//numeric number in
-//the password - NOTE – All rules must be passed
+//UC8 - Rule4 – Has exactly
+//1 Special Character
 
 // ^  ==> starts with or The beginning of a line
 // $  ==> ends with or end of a line
@@ -50,7 +48,7 @@ public class UserRegistrationProblem {
     }
 
     public static void verifyPassword(String pwd){
-        boolean verify = Pattern.matches("^[A-Z]+[0-9]+[A-Za-z0-9]{6,}$", pwd);
+        boolean verify = Pattern.matches("^[A-Z]+[0-9]+[_+-.][A-Za-z0-9]{6,}$", pwd);
         if (verify){
             System.out.println("Entered Password is :: "+ pwd + " valid...!!!");
         }else {
