@@ -3,8 +3,9 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC5 - As a User need to follow pre-defined Password rules.
-//Rule1 – minimum 8
+//UC6 - Rule2 – Should
+//have at least 1
+//Upper Case
 
 // ^  ==> starts with or The beginning of a line
 // $  ==> ends with or end of a line
@@ -48,7 +49,7 @@ public class UserRegistrationProblem {
     }
 
     public static void verifyPassword(String pwd){
-        boolean verify = Pattern.matches("^[A-Za-z0-9]{8,}$", pwd);
+        boolean verify = Pattern.matches("^[A-Z][A-Za-z0-9]{7,}$", pwd);
         if (verify){
             System.out.println("Entered Password is :: "+ pwd + " valid...!!!");
         }else {
