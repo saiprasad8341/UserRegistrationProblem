@@ -3,8 +3,8 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC4 - As a User need to
-//follow pre-defined Mobile Format
+//UC5 - As a User need to follow pre-defined Password rules.
+//Rule1 – minimum 8
 
 // ^  ==> starts with or The beginning of a line
 // $  ==> ends with or end of a line
@@ -47,29 +47,43 @@ public class UserRegistrationProblem {
         }
     }
 
+    public static void verifyPassword(String pwd){
+        boolean verify = Pattern.matches("^[A-Za-z0-9]{8,}$", pwd);
+        if (verify){
+            System.out.println("Entered Password is :: "+ pwd + " valid...!!!");
+        }else {
+            System.out.println("Please enter the valid input...");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the User Registration Problem...!!!");
         Scanner sc = new Scanner(System.in);
 
-//        System.out.print("Please enter the First Name :: ");
-//        String firstName = sc.next();
-//
-//        verifyFirstName(firstName);
-//
-//        System.out.print("Please enter the Last Name :: ");
-//        String lastName = sc.next();
-//
-//        verifyLastName(lastName);
-//
-//        System.out.print("Please enter the Email :: ");
-//        String email = sc.next();
-//
-//        verifyEmail(email);
+        System.out.print("Please enter the First Name :: ");
+        String firstName = sc.next();
+
+        verifyFirstName(firstName);
+
+        System.out.print("Please enter the Last Name :: ");
+        String lastName = sc.next();
+
+        verifyLastName(lastName);
+
+        System.out.print("Please enter the Email :: ");
+        String email = sc.next();
+
+        verifyEmail(email);
 
         System.out.print("Please enter the Phone number :: ");
         String phnum = sc.next();
 
         verifyPhoneNumber(phnum);
+
+        System.out.print("Please enter the Password :: ");
+        String pwd = sc.next();
+
+        verifyPassword(pwd);
 
     }
 }
