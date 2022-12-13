@@ -3,8 +3,14 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC2 - As a User need to
-//enter a valid Last Name
+//UC3 - As a User need to
+//enter a valid email
+
+// ^  ==> starts with or The beginning of a line
+// $  ==> ends with or end of a line
+// *  ==> zero or more
+// +  ==> one or more
+// ?  ==> zero or one (optional)
 public class UserRegistrationProblem {
 
     public static void verifyFirstName(String firstName){
@@ -23,6 +29,14 @@ public class UserRegistrationProblem {
             System.out.println("Please enter the valid input...");
         }
     }
+    public static void verifyEmail(String email){
+        boolean verify = (Pattern.matches("^[A-za-z]+([_+-.][a-zA-Z])*[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2})*$", email));
+        if (verify){
+            System.out.println("Entered "+ email + " is valid...!!!");
+        }else {
+            System.out.println("Please enter the valid input...");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to the User Registration Problem...!!!");
         Scanner sc = new Scanner(System.in);
@@ -36,5 +50,10 @@ public class UserRegistrationProblem {
         String lastName = sc.next();
 
         verifyLastName(lastName);
+
+        System.out.print("Please enter the Email :: ");
+        String email = sc.next();
+
+        verifyEmail(email);
     }
 }
