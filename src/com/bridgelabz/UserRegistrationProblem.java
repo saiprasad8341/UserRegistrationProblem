@@ -3,8 +3,8 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//UC3 - As a User need to
-//enter a valid email
+//UC4 - As a User need to
+//follow pre-defined Mobile Format
 
 // ^  ==> starts with or The beginning of a line
 // $  ==> ends with or end of a line
@@ -32,28 +32,44 @@ public class UserRegistrationProblem {
     public static void verifyEmail(String email){
         boolean verify = (Pattern.matches("^[A-za-z]+([_+-.][a-zA-Z])*[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2})*$", email));
         if (verify){
-            System.out.println("Entered "+ email + " is valid...!!!");
+            System.out.println("Entered email is :: "+ email + " valid...!!!");
         }else {
             System.out.println("Please enter the valid input...");
         }
     }
+
+    public static void verifyPhoneNumber(String phnum){
+        boolean verify = Pattern.matches("^[+](91)[6-9][0-9]{9}$", phnum);
+        if (verify){
+            System.out.println("Entered phone number is :: "+ phnum + " valid...!!!");
+        }else {
+            System.out.println("Please enter the valid input...");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the User Registration Problem...!!!");
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Please enter the First Name :: ");
-        String firstName = sc.next();
+//        System.out.print("Please enter the First Name :: ");
+//        String firstName = sc.next();
+//
+//        verifyFirstName(firstName);
+//
+//        System.out.print("Please enter the Last Name :: ");
+//        String lastName = sc.next();
+//
+//        verifyLastName(lastName);
+//
+//        System.out.print("Please enter the Email :: ");
+//        String email = sc.next();
+//
+//        verifyEmail(email);
 
-        verifyFirstName(firstName);
+        System.out.print("Please enter the Phone number :: ");
+        String phnum = sc.next();
 
-        System.out.print("Please enter the Last Name :: ");
-        String lastName = sc.next();
+        verifyPhoneNumber(phnum);
 
-        verifyLastName(lastName);
-
-        System.out.print("Please enter the Email :: ");
-        String email = sc.next();
-
-        verifyEmail(email);
     }
 }
